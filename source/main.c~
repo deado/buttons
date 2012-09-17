@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <input/input.h>
+#include <xenos/xenos.h>
+#include <console/console.h>  
+#include <usb/usbmain.h>
+
+
+void mainInit()
+{ 
+	//init
+	xenos_init(VIDEO_MODE_AUTO);
+	console_init();
+
+	usb_init();
+	usb_do_poll();
+}
+int main()
+{
+	mainInit();
+	console_clrscr();
+	printf( "Welcome to the beginning...\n\n"
+		"A graphical interface coming somewhere down the line.\n");
+
+//	struct controller_data_s oldc;
+	while(1)
+	{
+/* 		struct controller_data_s c;
+		if (get_controller_data(&c, 0))
+		{
+
+			if((c.a)&&(!oldc.a))
+			{
+				printf("a pushed\n");
+			}
+			if((!c.a)&&(oldc.a))
+			{
+				printf("a released\n");
+			}
+			oldc=c;
+		}*/
+		usb_do_poll();
+	}
+	return 0;
+}
