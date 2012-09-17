@@ -1,0 +1,5 @@
+Test and learning xbox 360 homebrew application written by deado.
+Based off the buttons application made by ced9511. I was unable to get his working for me,
+so in an attempt to learn how to make homebrew myself and testing and debugging;
+I rewrote it from scratch as my own. I will be using this as a basis to keep building and
+learning C and libxenon.
